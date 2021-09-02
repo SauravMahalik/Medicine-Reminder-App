@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Application Settings">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="splashScreen"
+            android:summary="Check to allow start screen every time application starts"
+            android:title="Allow Splash Screen" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="User Details Settings">
+        <PreferenceScreen
+            android:title="Delete User Profile"
+            android:summary="This will delete the profile of the user">
+
+            <intent android:targetPackage="medicine_reminder"
+                android:targetClass="medicine_reminder.View.DeleteUser"/>
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:title="Change User Details"
+            android:summary="This will change the details of the user"
+            >
+
+            <intent android:targetPackage="medicine_reminder"
+                android:targetClass="medicine_reminder.View.EditUserDetails" />
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:title="Reset Settings"
+            android:summary="This will reset the application. Click to Proceed">
+
+            <intent android:targetPackage="medicine_reminder"
+                android:targetClass="medicine_reminder.View.SettingsResetApplication"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Medicine Details Settings">
+        <PreferenceScreen
+            android:title="Delete Medication"
+            android:key="deletemedicine"
+            android:summary="This will delete all the medications of the user">
+            <intent android:targetPackage="medicine_reminder"
+                android:targetClass="medicine_reminder.View.DeleteMedicine"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+</PreferenceScreen>
